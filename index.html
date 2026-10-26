@@ -164,14 +164,18 @@ b, strong { font-weight: 700; }
 .info { position: absolute; left: 67px; top: 182px; width: 710px; border-collapse: separate; border-spacing: 0 5px; font-size: 18px; }
 .info th { width: 150px; text-align: left; color: var(--green); font-weight: 700; padding-left: 4px; }
 .info td { background: #fff; height: 52px; padding: 0 20px; border-radius: 8px; }
-.org { position: absolute; left: 826px; width: 387px; top: 182px; }
-.org .lb { font-size: 16px; font-weight: 700; color: var(--brown); }
-.org .ceo { width: 115px; height: 115px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 700; font-size: 19px; display: flex; align-items: center; justify-content: center; margin: 14px auto 0; }
-.org .stem { width: 1px; height: 26px; background: var(--brown); margin: 0 auto; }
-.org .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
-.org .pill { height: 44px; border-radius: 22px; border: 1.5px solid var(--green); color: var(--green); font-size: 17px; display: flex; align-items: center; justify-content: center; background: #fff; }
-.org .pill.f { background: var(--green); color: #fff; font-weight: 700; }
-.org .grid.lab2 { margin-top: 18px; }
+.org { position: absolute; left: 826px; width: 387px; top: 176px; --line: #DCCFBB; }
+.org .ceo { position: relative; z-index: 1; width: 132px; height: 132px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 700; font-size: 21px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+.org .tree { position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; padding-top: 30px; }
+.org .tree::before { content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 16px; margin-left: -1px; background: var(--line); }
+.org .tree::after { content: ''; position: absolute; top: 15px; left: calc((100% - 18px) / 4); right: calc((100% - 18px) / 4); height: 2px; background: var(--line); }
+.org .branch { position: relative; display: flex; flex-direction: column; gap: 14px; }
+.org .branch::before { content: ''; position: absolute; left: 50%; top: -15px; bottom: 29px; width: 2px; margin-left: -1px; background: var(--line); }
+.org .pill { position: relative; z-index: 1; height: 58px; border-radius: 29px; border: 1.5px solid #7FA58E; background: #fff; color: #3F3E38; font-size: 18px; font-weight: 500; display: flex; align-items: center; justify-content: center; }
+.org .labs { position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; margin-top: 28px; }
+.org .labs::before { content: ''; position: absolute; top: 50%; left: 25%; right: 25%; height: 2px; margin-top: -1px; background: var(--line); }
+.org .pill.f { background: var(--green); border-color: var(--green); color: #fff; font-weight: 700; }
+.org .pill.o { border: 2px solid var(--green); color: var(--green); font-weight: 700; }
 
 /* S13 statement */
 .green { background: var(--green); }
@@ -377,10 +381,12 @@ b, strong { font-weight: 700; }
     <tr><th>홈페이지</th><td>www.booktreei.com</td></tr>
   </table>
   <div class="org" data-anim>
-    <div class="lb">조직</div>
-    <div class="ceo">대표이사</div><div class="stem"></div>
-    <div class="grid"><div class="pill">가맹사업팀</div><div class="pill">기획팀</div><div class="pill">운영팀</div><div class="pill">마케팅팀</div><div class="pill">디자인팀</div><div class="pill">기술개발팀</div></div>
-    <div class="grid lab2"><div class="pill f">기업부설연구소</div><div class="pill f">교재개발 연구팀</div></div>
+    <div class="ceo">대표이사</div>
+    <div class="tree">
+      <div class="branch"><div class="pill">가맹사업팀</div><div class="pill">운영팀</div><div class="pill">디자인팀</div></div>
+      <div class="branch"><div class="pill">기획팀</div><div class="pill">마케팅팀</div><div class="pill">기술개발팀</div></div>
+    </div>
+    <div class="labs"><div class="pill f">기업부설연구소</div><div class="pill o">교재개발 연구팀</div></div>
   </div>
 </section>
 
